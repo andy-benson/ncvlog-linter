@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle ncvlog-linter",
+        "command": "ncvlog-linter:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "ncvlog-linter",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "ncvlog-linter:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

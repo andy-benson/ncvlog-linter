@@ -1,0 +1,30 @@
+{
+  "name": "ncvlog-linter",
+  "main": "lib/ncvlog-linter.js",
+  "version": "0.0.9",
+  "private": true,
+  "description": "ncvlog linter",
+  "keywords": [
+    "linter",
+    "ncvlog",
+    "verilog",
+    "systemverilog",
+    "hdl"
+  ],
+  "engines": {
+    "atom": ">=1.4.0 <2.0.0"
+  },
+  "package-deps": [
+    "linter"
+  ],
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "2.0.0": "provideLinter"
+      }
+    }
+  },
+  "dependencies": {
+    "atom-linter": "^8.0.0"
+  }
+}
