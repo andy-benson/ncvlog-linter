@@ -1,8 +1,8 @@
 {
   "name": "ncvlog-linter",
   "main": "lib/ncvlog-linter.js",
-  "version": "0.0.9",
-  "private": true,
+  "version": "0.0.1",
+  "repository": "https://github.com/andy-benson/ncvlog-linter",
   "description": "ncvlog linter",
   "keywords": [
     "linter",
