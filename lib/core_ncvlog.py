@@ -56,19 +56,15 @@ def process_line(msg_type,line):
 #-----------------------------------------------------------------------------
 # run ncvlog on the current file
 #
-# work libs and logfiles are not required so directed to the black-hole of /tmp
-#
-# command line also needs cds.lib and hdl.var files which specify the worklib
-#
-# Todo : could add user defined temp directory if /tmp is not suitable
 #-----------------------------------------------------------------------------
 
-ncvlog_output = subprocess.run(["ncvlog", incdir_cmd, "-sv", "-work", "mylib", "-logfile", "/tmp/logfile",str(filelist[0])], capture_output=True,universal_newlines=True)
+ncvlog_output = subprocess.run(["ncvlog", incdir_cmd, "-sv", "-logfile", "/tmp/logfile",str(filelist[0])], capture_output=True,universal_newlines=True)
 
 lines = ncvlog_output.stdout
 
-
 lines = lines.split("\n")
+
+#print (lines) 
 
 #-----------------------------------------------------------------------------
 # parse each of the lines looking for the ncvlog info / warning / error codes
@@ -86,6 +82,8 @@ for line in lines:
     if line.startswith("ncvlog: *I"):
             out += process_line("Info",line)
 
+    if line.startswith("ncvlog: *F"):
+            out += process_line("Fatal",line)
 #-----------------------------------------------------------------------------
 # return formatted errors back to calling java script
 #
