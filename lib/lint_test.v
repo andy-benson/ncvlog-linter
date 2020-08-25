@@ -1,8 +1,6 @@
-module test();
+module lint_test();
      
 dda
-         
-         
-          
-    
+
+             
 endmodule 
